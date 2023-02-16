@@ -1,1 +1,1 @@
-<?php echo "hello" ?>
+<? php header('Location: registration/login.php'); ?>
