@@ -1,3 +1,3 @@
 <?php
-exho "hi";
+echo "hi";
 ?> 
