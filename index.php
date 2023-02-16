@@ -1,4 +1,4 @@
 <?php
-header('Location: registration/login');
+header('Location: registration/login.php');
 die();
 ?> 
