@@ -1,4 +1,4 @@
 <? php 
   ob_start(); 
-  header('Location: registration/login.php'); 
+  header('Location: https://www.google.com/');
 ?>
