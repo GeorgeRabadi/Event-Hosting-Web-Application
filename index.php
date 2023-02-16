@@ -1,3 +1,4 @@
 <?php
-echo "hi";
+header("Location: registration/login.php");
+die();
 ?> 
