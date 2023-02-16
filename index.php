@@ -1,3 +1,4 @@
-<? php 
-  echo "hello";
+<? php
+header('Location: https://www.google.com/');
+exit;
 ?>
