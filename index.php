@@ -1,1 +1,4 @@
-<? php header('Location: registration/login.php'); ?>
+<? php 
+  ob_start(); 
+  header('Location: registration/login.php'); 
+?>
