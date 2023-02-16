@@ -1,1 +1,1 @@
-<?php header("Location: registration/login.php/"); ?>
+<?php header('Location: home/root/www/registration/login.php/'); ?>
