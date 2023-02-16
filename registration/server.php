@@ -10,7 +10,7 @@ $gender = "";
 $errors = array(); 
 
 
-$db = mysqli_connect("localhost", 'root', '', 'project');
+$db = mysqli_connect('cop4710project-server.mysql.database.azure.com', 'aqgyfhsoav', 'FYB12SMDS8TQ70R0$', 'cop4710project-database');
 
 if (mysqli_connect_errno()) 
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
