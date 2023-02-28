@@ -10,7 +10,7 @@ $gender = "";
 $errors = array(); 
 
 
-$db = mysqli_connect('cop4710project-server.mysql.database.azure.com', 'ulmlnlyaof', '77ZA4Q86C53N7214$', 'cop4710project-database');
+$db = mysqli_connect('db-mysql-nyc1-15533-do-user-13664899-0.b.db.ondigitalocean.com', 'doadmin', 'AVNS_ZxrQ138sKGgM_AfUM6j', 'defaultdb');
 
 if (mysqli_connect_errno()) 
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
