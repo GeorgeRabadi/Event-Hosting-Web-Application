@@ -51,22 +51,22 @@ if (isset($_POST['create_event'])) {
   $type = mysqli_real_escape_string($db, $_POST['type']);
 
   
-  $user_check_query = "SELECT * FROM events WHERE name ='$name' LIMIT 1";
-  $result = mysqli_query($db, $user_check_query);
-  $user = mysqli_fetch_assoc($result);
+  $query = "SELECT * FROM events WHERE name ='$name' LIMIT 1";
+  $result = mysqli_query($db, $query);
+  $eName = mysqli_fetch_assoc($result);
   
 
-  if (!empty($user)) {
+  if (!empty($eName)) {
       array_push($errors, "Event name already exists!");
     }
 
 
-  $user_check_query = "SELECT * FROM rsomembership WHERE rsoName ='$rsoName' and userID = '$host' LIMIT 1";
-  $result = mysqli_query($db, $user_check_query);
-  $user = mysqli_fetch_assoc($result);
+  $query = "SELECT * FROM rsomembership WHERE rsoName ='$rsoName' and userID = '$host' LIMIT 1";
+  $result = mysqli_query($db, $query);
+  $rName = mysqli_fetch_assoc($result);
 
 
-  if (empty($user)) {
+  if (empty($rName)) {
     array_push($errors, "RSO does not exist!");
   }
 

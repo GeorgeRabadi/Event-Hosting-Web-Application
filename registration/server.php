@@ -1,7 +1,7 @@
 <?php
 
-$domains = array('knights.ucf.edu');
-$domainNames = array('University of Central Florida');
+$domains = array('knights.ucf.edu', 'program.harvard.edu');
+$domainNames = array('University of Central Florida', 'Harvard University');
 
 // SIGNUP USER
 session_start();
@@ -29,14 +29,14 @@ if (isset($_POST['reg_user'])) {
   }
 
   
-  for($i = 0; $i < 1; $i = $i + 1)
+  for($i = 0; $i < sizeof($domains); $i++)
   {
       if(strtolower($universityName) === $domains[$i]){
         $universityName = $domainNames[$i];
         break;}
   }
 
-  if($i === 1)
+  if($i === sizeof($domains))
     array_push($errors, "Invalid Domain");
 
   $user_check_query = "SELECT * FROM users WHERE userID ='$userid' LIMIT 1";
