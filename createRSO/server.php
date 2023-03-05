@@ -18,6 +18,7 @@ $arsize = "";
 $student = array();
 $errors = array(); 
 
+
 if (isset($_POST['create_rso'])) {
 
   $name = mysqli_real_escape_string($db, $_POST['name']);
@@ -25,10 +26,11 @@ if (isset($_POST['create_rso'])) {
   $arsize = mysqli_real_escape_string($db, $_POST['arsize']);
   for($i = 0; $i<$arsize; $i++)
   {
-    if("student[$i]" != null)
-        array_push($errors, mysqli_real_escape_string($db, $_POST["student[$i]"]));
+    if(isset($_POST[strval($i)]))
+        array_push($student, mysqli_real_escape_string($db, $_POST[strval($i)]));
+
   }
-  
+
   $query = "SELECT * FROM rso WHERE rsoName ='$name' LIMIT 1";
   $result = mysqli_query($db, $query);
   $rName = mysqli_fetch_assoc($result);
@@ -40,20 +42,24 @@ if (isset($_POST['create_rso'])) {
 
   if (count($errors) == 0) {
 
-  	$query = "INSERT INTO rso (rsoName, adminID)  
-    VALUES('$name',' $admin' )";
+    $query = "UPDATE users SET UserStatus = 'A' WHERE userID = '$admin'";
+    mysqli_query($db, $query);
+    
+    $query = "INSERT INTO rso (rsoName, adminID) VALUES('$name','$admin')";
   	mysqli_query($db, $query);
 
-    
-    $query = "INSERT INTO rsomembership (rsoName, studentID)  
-      VALUES('$name','$admin')";
+    $query = "INSERT INTO rsomembership (rsoName, userID) VALUES('$name','$admin' )";
+  	mysqli_query($db, $query);
 
     for($i = 0; $i<sizeof($student); $i++)
     {  
-      $query = "INSERT INTO rsomembership (rsoName, studentID)  
-      VALUES('$name','$student[$i]' )";
+
+      $query = "INSERT INTO rsomembership (rsoName, userID)  VALUES('$name','$student[$i]')";
       mysqli_query($db, $query);
+
     }
+
+
     echo "<script>alert('RSO Created Successfully');</script>";
     
   }

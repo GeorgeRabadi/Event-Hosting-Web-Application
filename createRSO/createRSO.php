@@ -42,7 +42,6 @@ for($i = 0; $i< $total; $i++)
         <tr>
           <td>  
               <div class="input-box">
-                  <span class = "details" style= "color: #F1C400;">RSO Name</span>
                   <input type="text" name="name" placeholder="Enter RSO Name" required value = "<?php echo $name; ?>">
               </div>
              </td>
@@ -85,7 +84,7 @@ for($i = 0; $i< $total; $i++)
           var checkbox = document.createElement("INPUT");
           checkbox.setAttribute("type", "checkbox");
           checkbox.setAttribute('value', studentArray[i]);
-          checkbox.setAttribute('name', 'student[' + i + ']');
+          checkbox.setAttribute('name', String(i));
           checkbox.setAttribute('class', 'studentCheck');
           
 

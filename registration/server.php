@@ -6,9 +6,10 @@ $domainNames = array('University of Central Florida', 'Harvard University');
 // SIGNUP USER
 session_start();
 
-$fullname = "";
 $userid = "";
 $universityName = "";
+$password_2 = "";
+$password_1 = "";
 $errors = array(); 
 
 
