@@ -55,8 +55,8 @@
                     </div>
                 </div>
                 <div class = "gender-details">
-                <input type="radio" name="type" id="dot-1" required value = "public">
-                <input type="radio" name="type" id="dot-2" required value = "private">
+                <input type="radio" name="type" id="dot-1" required value = "Public">
+                <input type="radio" name="type" id="dot-2" required value = "Private">
                 <input type="radio" name="type" id="dot-3" required value = "RSO">
                 <span class="gender-title">Event Type</span>
                 <div class="category">

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Event</title>
+    <title>Create University</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>

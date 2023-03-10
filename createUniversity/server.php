@@ -3,8 +3,8 @@
 session_start();
 
 if (!isset($_SESSION['userID'])){
-    header("Location: registration/login.php");
-    die;}
+  header("Location: ../registration/login.php");
+  die;}
 
 $host = $_SESSION['userID'];
 

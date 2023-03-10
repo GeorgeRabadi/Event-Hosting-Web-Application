@@ -6,8 +6,8 @@ if (!isset($_SESSION['userID'])){
     header("Location: registration/login.php");
     die;}
 else{
-"<script>You are now Logged in!<script>alert";
-header("Location: createUniversity/createUniversity.php");}
+echo "<script>You are now Logged in!<script>alert";
+header("Location: displayRSOs/displayRSOs.php");}
 
 
 ?>

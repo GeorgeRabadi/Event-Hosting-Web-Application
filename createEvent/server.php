@@ -3,8 +3,8 @@
 session_start();
 
 if (!isset($_SESSION['userID'])){
-    header("Location: registration/login.php");
-    die;}
+  header("Location: ../registration/login.php");
+  die;}
 
 $host = $_SESSION['userID'];
 
@@ -67,8 +67,9 @@ if (isset($_POST['create_event'])) {
 
 
   if (empty($rName)) {
-    array_push($errors, "RSO does not exist!");
+    array_push($errors, "RSO does not exist or is not Owned by You!");
   }
+
 
   if (count($errors) == 0) {
 

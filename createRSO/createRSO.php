@@ -23,7 +23,7 @@ for($i = 0; $i< $total; $i++)
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Choose Students</title>
+    <title>Create RSO</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
@@ -33,9 +33,9 @@ for($i = 0; $i< $total; $i++)
     <table class="content-table">
         <thead>
           <tr>
-            <th>Student ID:</th>
-            <th>Select as Standard Member:</th>
-            <th>Select as Admin:</th>
+            <th>Student ID</th>
+            <th>Select as Standard Member</th>
+            <th>Select as Admin</th>
           </tr>
         </thead>
         <tbody class="tbody">
@@ -46,7 +46,7 @@ for($i = 0; $i< $total; $i++)
               </div>
              </td>
           </tr>
-          <tr>
+          <tr style ="background-color: transparent;">
             <td>  
               <div class="button">
                 <input type="submit" value="Submit" name="create_rso"> 
@@ -54,8 +54,6 @@ for($i = 0; $i< $total; $i++)
              </td>
           </tr>
         </tbody>
-        <tr>
-        </tr>
       </table>
       <input type="text" id = "arsize" name="arsize" style = "display: none;" value = "<?php echo $arsize; ?>">
   <form>
