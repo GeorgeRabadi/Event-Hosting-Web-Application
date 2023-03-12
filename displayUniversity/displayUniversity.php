@@ -44,7 +44,7 @@ for($i = 0; $i< $total; $i++){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display RSOs</title>
+    <title>Display Universities</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">

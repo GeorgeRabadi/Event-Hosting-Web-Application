@@ -17,8 +17,8 @@
                         <input type="text" name="name" placeholder="Enter Event Name" required value = "<?php echo $name; ?>">
                     </div>
                     <div class="input-box">
-                        <span class = "details">RSO Name</span>
-                        <input type="text" name="rsoName" placeholder="Enter Your RSO's Name" required value = "<?php echo $rsoName; ?>">
+                        <span class = "details">RSO Name (For Non-Public Events)</span>
+                        <input type="text" name="rsoName" placeholder="Enter Your RSO's Name" value = "<?php echo $rsoName; ?>">
                     </div>
                     <div class="input-box">
                         <span class = "details">Category</span>
@@ -39,8 +39,8 @@
                     <div class="input-box">
                         <span class = "details">Location</span>
                         <input type = "text" id = "searchInput" name="locationName" placeholder="Enter Event Location" required value = "<?php echo $locationName; ?>">
-                        <input type = "text"   style = "display: none;" id = "lat" name="lat"  required value = "<?php echo $lat; ?>">
-                        <input type = "text" style = "display: none;" id = "long" name="long" required value = "<?php echo $long; ?>">
+                        <input type = "hidden"  id = "lat" name="lat"  required value = "<?php echo $lat; ?>">
+                        <input type = "hidden"  id = "long" name="long" required value = "<?php echo $long; ?>">
                     </div>
                     <div class="input-box">
                         <span id = "map" class="details" style="height: 15%; width: 439px; position: absolute"></span>

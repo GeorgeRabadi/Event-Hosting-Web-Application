@@ -55,7 +55,7 @@ for($i = 0; $i< $total; $i++)
           </tr>
         </tbody>
       </table>
-      <input type="text" id = "arsize" name="arsize" style = "display: none;" value = "<?php echo $arsize; ?>">
+      <input type="hidden" id = "arsize" name="arsize" value = "<?php echo $arsize; ?>">
   <form>
 
   <script>

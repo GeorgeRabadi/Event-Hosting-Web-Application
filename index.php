@@ -7,7 +7,7 @@ if (!isset($_SESSION['userID'])){
     die;}
 else{
 echo "<script>You are now Logged in!<script>alert";
-header("Location: displayRSOs/displayRSOs.php");}
+header("Location: createEvent/createEvent.php");}
 
 
 ?>

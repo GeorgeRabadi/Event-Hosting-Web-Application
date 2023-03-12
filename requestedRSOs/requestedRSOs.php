@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display RSOs</title>
+    <title>Requested RSOs</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
-  <form action = "displayRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
-    <table class="content-table">
+    <form action = "requestedRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
+      <table class="content-table">
         <thead>
           <tr>
             <th>RSO Name</th>
@@ -22,14 +22,18 @@
         <tr style ="background-color: transparent;">
             <td>  
               <div class="button">
-                <input type="submit" value="Join" name="join_rso"> 
+                <input type="submit" value="Accept" name="accept_rso"> 
+              </div>
+             </td>
+             <td>  
+              <div class="button">
+                <input type="submit" value="Decline" name="decline_rso"> 
               </div>
              </td>
         </tr>
         </tbody>
       </table>
-  </form>
-
+    </form>
   <script>
     
     function generateTable(){
@@ -67,28 +71,23 @@
 
         var checkbox = document.createElement("INPUT");
         checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute('value', universityArray[i]);
+        checkbox.setAttribute('value', rsoArray[i]);
         checkbox.setAttribute('name', String(i));
         checkbox.setAttribute('class', 'rsoCheck');
 
         cell5.insertAdjacentElement("afterbegin", checkbox);
 
-
       }
-  
+
+      
 
     }
 
-
-          
-      
+    
     function CheckBoxCount() {
 
       var rsoList = document.getElementsByClassName("rsoCheck");
-      var userUniversity = <?php echo json_encode($userUniversity); ?>;
       var i;
-
-   
 
       for (i = 0; i < rsoList.length; i++) {
           if (rsoList[i].type == "checkbox" && rsoList[i].checked) 
@@ -96,27 +95,10 @@
 
       }
 
-
       if (i == rsoList.length){
-          alert("Please Choose at Least 1 RSO to Join!"); 
+          alert("Please Choose at Least 1 RSO!"); 
           return false;}
 
-
-      for (i = 0; i < rsoList.length; i++) 
-      { 
-    
-        if (rsoList[i].type == "checkbox" && rsoList[i].checked) 
-        {
-            
-            if(rsoList[i].value != userUniversity)
-            {
-                alert("You Can Only Join RSOs Belonging to Your University!"); 
-                return false;
-            }
-              
-        }
-
-      }
 
       return true;
 

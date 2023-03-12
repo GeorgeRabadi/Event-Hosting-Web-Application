@@ -95,8 +95,6 @@ for($i = 0; $i< $total; $i++){
   $result = mysqli_query($db, $query);
   array_push($hostUniversity, mysqli_fetch_array($result)[0]);
 
-  echo "<script>alert('$hostUniversity[$i]');</script>";
-
 }
 
          
@@ -105,7 +103,7 @@ for($i = 0; $i< $total; $i++){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display RSOs</title>
+    <title>Display Events</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
@@ -156,11 +154,13 @@ for($i = 0; $i< $total; $i++){
 
 
 
-      for(var i = 0; i<length; i++)
+      for(var i = 0, k = 0; i<length; i++)
       {
           
-          if(typeArray[i] == "Private" && userUniversity != hostUniversity[i])
+          if(typeArray[i] == "Private" && hostUniversity[i] != userUniversity)
             continue;
+      
+            
 
           if(typeArray[i] == "RSO")
           {
@@ -176,7 +176,8 @@ for($i = 0; $i< $total; $i++){
 
           }
 
-          var row = table[0].insertRow(i);
+          var row = table[0].insertRow(k);
+          
 
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);
@@ -203,7 +204,7 @@ for($i = 0; $i< $total; $i++){
           cell10.innerHTML = emailArray[i];
           cell11.innerHTML = phoneNumArray[i];
 
-          if(i%2==0){
+          if(k%2==0){
 
           cell1.style.color = '#F1C400';
           cell2.style.color = '#F1C400';
@@ -218,6 +219,8 @@ for($i = 0; $i< $total; $i++){
           cell11.style.color = '#F1C400';
 
         }
+
+        k++;
 
       }
       

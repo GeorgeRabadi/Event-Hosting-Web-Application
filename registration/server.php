@@ -1,7 +1,7 @@
 <?php
 
-$domains = array('knights.ucf.edu', 'program.harvard.edu');
-$domainNames = array('University of Central Florida', 'Harvard University');
+$domains = array('knights.ucf.edu', 'ufl.edu', 'mail.usf.edu', 'umiami.edu', 'mail.valenciacollege.edu' );
+$domainNames = array('University of Central Florida', 'The University of Florida', 'University of South Florida','The University of Miami', 'Valencia College');
 
 // SIGNUP USER
 session_start();

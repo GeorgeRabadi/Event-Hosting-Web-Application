@@ -12,6 +12,7 @@ if (mysqli_connect_errno())
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 
 
+
 $name = "";
 $admin = "";
 $arsize = "";
@@ -38,31 +39,72 @@ if (isset($_POST['create_rso'])) {
 
   if (!empty($rName)) {
       array_push($errors, "RSO already exists!");
-    }
+  }
 
-  if (count($errors) == 0) {
+  $query = "SELECT * FROM requestedrso WHERE rsoName ='$name' LIMIT 1";
+  $result = mysqli_query($db, $query);
+  $rName = mysqli_fetch_assoc($result);
+  
+  if (!empty($rName)) {
+    array_push($errors, "RSO already requested!");
+}
+  
+  
+  $host = $_SESSION['userID'];
+  $checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$host'  LIMIT 1";
+  $result = mysqli_query($db, $checkAdminStatus);
+  $adminStatus = mysqli_fetch_array($result);
 
-    $query = "UPDATE users SET UserStatus = 'A' WHERE userID = '$admin'";
-    mysqli_query($db, $query);
-    
-    $query = "INSERT INTO rso (rsoName, adminID) VALUES('$name','$admin')";
-  	mysqli_query($db, $query);
 
-    $query = "INSERT INTO rsomembership (rsoName, userID) VALUES('$name','$admin' )";
-  	mysqli_query($db, $query);
+  if (count($errors) == 0 ) {
 
-    for($i = 0; $i<sizeof($student); $i++)
-    {  
+    if($adminStatus[0] == 'A')
+    {
 
-      $query = "INSERT INTO rsomembership (rsoName, userID)  VALUES('$name','$student[$i]')";
+      $query = "UPDATE users SET UserStatus = 'A' WHERE userID = '$admin' AND UserStatus != 'S'";
+      mysqli_query($db, $query);
+      
+      $query = "INSERT INTO rso (rsoName, adminID) VALUES('$name','$admin')";
       mysqli_query($db, $query);
 
+      $query = "INSERT INTO rsomembership (rsoName, userID) VALUES('$name','$admin' )";
+      mysqli_query($db, $query);
+
+      for($i = 0; $i<sizeof($student); $i++)
+      {  
+
+        $query = "INSERT INTO rsomembership (rsoName, userID)  VALUES('$name','$student[$i]')";
+        mysqli_query($db, $query);
+
+      }
+
+
+      echo "<script>alert('RSO Created Successfully');</script>";
+    
     }
+    else
+    {
 
+      $query = "INSERT INTO requestedrso (rsoName, adminID) VALUES('$name','$admin')";
+      mysqli_query($db, $query);
 
-    echo "<script>alert('RSO Created Successfully');</script>";
+      $query = "INSERT INTO requestedrsomembership (rsoName, userID) VALUES('$name','$admin' )";
+      mysqli_query($db, $query);
+
+      for($i = 0; $i<sizeof($student); $i++)
+      {  
+
+        $query = "INSERT INTO requestedrsomembership (rsoName, userID)  VALUES('$name','$student[$i]')";
+        mysqli_query($db, $query);
+
+      }
+
+      echo "<script>alert('Awaiting Admin Approval');</script>";
+      
+    }
     
   }
+  
 }
 
 

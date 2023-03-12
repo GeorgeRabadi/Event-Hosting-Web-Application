@@ -6,12 +6,14 @@ if (!isset($_SESSION['userID'])){
   header("Location: ../registration/login.php");
   die;}
 
-$host = $_SESSION['userID'];
+
 
 $db = mysqli_connect("localhost", 'root', '', 'cop4710');
 
 if (mysqli_connect_errno()) 
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+
+$host = $_SESSION['userID'];
 
 $checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$host'  LIMIT 1";
 $result = mysqli_query($db, $checkAdminStatus);
@@ -60,13 +62,22 @@ if (isset($_POST['create_event'])) {
       array_push($errors, "Event name already exists!");
     }
 
+    
+  $query = "SELECT * FROM events WHERE name ='$name' LIMIT 1";
+  $result = mysqli_query($db, $query);
+  $eName = mysqli_fetch_assoc($result);
+
+  if (!empty($eName)) {
+    array_push($errors, "Event already requested!");
+  }
+
 
   $query = "SELECT * FROM rsomembership WHERE rsoName ='$rsoName' and userID = '$host' LIMIT 1";
   $result = mysqli_query($db, $query);
   $rName = mysqli_fetch_assoc($result);
 
 
-  if (empty($rName)) {
+  if (empty($rName) && $type != "Public") {
     array_push($errors, "RSO does not exist or is not Owned by You!");
   }
 
@@ -84,10 +95,37 @@ if (isset($_POST['create_event'])) {
         mysqli_query($db, $query);
     }
 
-  	$query = "INSERT INTO events (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
-    VALUES('$host', '$rsoName', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
-  	mysqli_query($db, $query);
-    echo "<script>alert('Event Created Successfully');</script>";
+  	if($type != "Public")
+    {
+      $query = "INSERT INTO events (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
+      VALUES('$host', '$rsoName', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
+      mysqli_query($db, $query);
+      echo "<script>alert('Event Created Successfully');</script>";
+    }
+    else if($adminStatus[0] == 'S')
+    {
+
+      $query = "SET foreign_key_checks = 0";
+      mysqli_query($db, $query);
+
+      $query = "INSERT INTO events (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
+      VALUES('$host', '', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
+      mysqli_query($db, $query);
+      echo "<script>alert('Event Created Successfully');</script>";
+
+      $query = "SET foreign_key_checks = 1";
+      mysqli_query($db, $query);
+
+    }
+    else
+    {
+      $query = "INSERT INTO requestedevents (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
+      VALUES('$host', '', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
+      mysqli_query($db, $query);
+
+      echo "<script>alert('Awaiting Super Admin Approval');</script>";
+    }
+
     
   }
 }
