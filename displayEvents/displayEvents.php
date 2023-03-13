@@ -164,6 +164,7 @@ for($i = 0; $i< $total; $i++){
 
           if(typeArray[i] == "RSO")
           {
+
             var j;
             for(j = 0; j<rsoLength; j++)
             {
@@ -220,12 +221,145 @@ for($i = 0; $i< $total; $i++){
 
         }
 
+        
+        cell1.setAttribute("id","event-link");
+        cell1.setAttribute("name", nameArray[i]);
+
+        cell1.onclick = function()
+        {
+
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell2.setAttribute("id","event-link");
+        cell2.setAttribute("name", nameArray[i]);
+
+        cell2.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell3.setAttribute("id","event-link");
+        cell3.setAttribute("name", nameArray[i]);
+
+        cell3.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+
+        cell4.setAttribute("id","event-link");
+        cell4.setAttribute("name", nameArray[i]);
+
+        cell4.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell5.setAttribute("id","event-link");
+        cell5.setAttribute("name", nameArray[i]);
+
+        cell5.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        
+        cell6.setAttribute("id","event-link");
+        cell6.setAttribute("name", nameArray[i]);
+
+        cell6.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell7.setAttribute("id","event-link");
+        cell7.setAttribute("name", nameArray[i]);
+
+        cell7.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell8.setAttribute("id","event-link");
+        cell8.setAttribute("name", nameArray[i]);
+
+        cell8.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell9.setAttribute("id","event-link");
+        cell9.setAttribute("name", nameArray[i]);
+
+        cell9.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell10.setAttribute("id","event-link");
+        cell10.setAttribute("name", nameArray[i]);
+
+        cell10.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
+        cell11.setAttribute("id","event-link");
+        cell11.setAttribute("name", nameArray[i]);
+
+        cell11.onclick = function()
+        {
+          
+          eventName = this.getAttribute("name");
+          sendToPHP(eventName);
+
+        }
+
         k++;
+
+        
 
       }
       
       
       
+
+    }
+
+    function sendToPHP(eventName)
+    {
+      var javascriptVariable = eventName;
+      window.location.href = "../commentEvent/commentEvent.php?eventName=" + javascriptVariable;
 
     }
 

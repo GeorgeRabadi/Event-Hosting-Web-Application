@@ -94,6 +94,5 @@ else if (isset($_POST['decline_request']))
 
   }
 
-  header("Refresh:0");
 }
 ?>
