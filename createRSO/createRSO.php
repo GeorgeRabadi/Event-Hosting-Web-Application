@@ -19,13 +19,13 @@ for($i = 0; $i< $total; $i++)
   array_push($studentArray, mysqli_fetch_array($result)[0]);
          
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Create RSO</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body onload="generateTable()">
   
   <form action = "createRSO.php" method = "post" onsubmit="return CheckBoxCount();">

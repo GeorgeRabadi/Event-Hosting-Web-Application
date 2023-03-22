@@ -107,6 +107,11 @@ for($i = 0; $i< $total; $i++){
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
+    <div id="Navbar" class="navbar">
+            <a href="../registration/register.php">Home</a>
+            <a href="../registration/login.php">Login</a>
+            <a href="../registration/register.php">Register</a>
+    </div>
     <table class="content-table">
         <thead>
           <tr>
