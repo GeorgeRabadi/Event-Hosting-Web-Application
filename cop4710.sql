@@ -7,6 +7,14 @@
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
+# delete the database if it already exists
+drop database if exists cop4710;
+
+# create a new database
+create database cop4710;
+
+use cop4710;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -320,11 +328,13 @@ INSERT INTO `users` (`userID`, `universityName`, `password`, `UserStatus`) VALUE
 --
 -- Indexes for table `events`
 --
+set foreign_key_checks = 0;
 ALTER TABLE `events`
   ADD PRIMARY KEY (`name`),
   ADD KEY `locationName` (`locationName`),
   ADD KEY `rsoName` (`rsoName`),
   ADD KEY `Host` (`Host`);
+set foreign_key_checks = 1;
 
 --
 -- Indexes for table `location`
@@ -398,7 +408,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`locationName`) REFERENCES `location` (`locationName`),
-  ADD CONSTRAINT `events_ibfk_2` FOREIGN KEY (`rsoName`) REFERENCES `rso` (`rsoName`),
   ADD CONSTRAINT `events_ibfk_3` FOREIGN KEY (`Host`) REFERENCES `users` (`userID`);
 
 --
