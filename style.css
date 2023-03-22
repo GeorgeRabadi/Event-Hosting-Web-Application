@@ -6,7 +6,6 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Verdana ;
 }
 
 
@@ -242,10 +241,12 @@ form .user-details .input-box{
 }
 
 .content-table {
+  table-layout: fixed;
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: 0.9em;
   min-width: 400px;
+  max-width: 1400px;
+  font-size: 18px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
