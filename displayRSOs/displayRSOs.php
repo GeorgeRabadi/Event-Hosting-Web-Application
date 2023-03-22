@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
+  <div id="Navbar" class="navbar">
+          <a href="../registration/register.php">Home</a>
+          <a href="../registration/login.php">Login</a>
+          <a href="../registration/register.php">Register</a>
+  </div>
   <form action = "displayRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
     <table class="content-table">
         <thead>
