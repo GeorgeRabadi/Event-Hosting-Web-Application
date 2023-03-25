@@ -88,6 +88,17 @@ body
   background: black;
 }
 
+.container .home{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 100px;
+  background-color: #b5985a;
+  border: solid;
+  border-color: black;
+
+}
+
 .input
 {
       position: relative;
@@ -247,6 +258,7 @@ form .user-details .input-box{
 
 .content-table tbody tr:nth-of-type(odd) {
   background-color: black;
+}
   
 #event-link{
   cursor: pointer; 
@@ -308,4 +320,14 @@ form .user-details .input-box{
   align-items: center;
   top: 50%;
   
+}
+
+img {
+  margin-left: -20%;
+  margin-right: auto;
+}
+
+#statue_img {
+  width: 100%;
+  margin-left: auto;
 }
