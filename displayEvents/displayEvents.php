@@ -108,9 +108,12 @@ for($i = 0; $i< $total; $i++){
 </head>
 <body onload="generateTable()">
     <div id="Navbar" class="navbar">
-            <a href="../registration/register.php">Home</a>
-            <a href="../registration/login.php">Login</a>
-            <a href="../registration/register.php">Register</a>
+        <a class="active" href="../homepage/homepage.php">Home</a>
+        <a href="../createEvent/createEvent.php">Create Event</a>
+        <a href="../createRSO/createRSO.php">Create RSO</a>
+        <a href="../displayEvents/displayEvents.php">See Events</a>
+        <a href="../displayRSOs/displayRSOs.php">See RSO</a>
+        <a href="../displayUniversity/displayUniversity.php">See University</a>
     </div>
     <table class="content-table">
         <thead>
@@ -131,6 +134,9 @@ for($i = 0; $i< $total; $i++){
         <tbody class="tbody">
         </tbody>
       </table>
+    
+    <div id="Bar" class="bar">
+    </div>
 
   <script>
     

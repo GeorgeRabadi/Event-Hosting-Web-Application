@@ -27,7 +27,14 @@ for($i = 0; $i< $total; $i++)
 </head>
 
 <body onload="generateTable()">
-  
+  <div id="Navbar" class="navbar">
+          <a class="active" href="../homepage/homepage.php">Home</a>
+          <a href="../createEvent/createEvent.php">Create Event</a>
+          <a href="../createRSO/createRSO.php">Create RSO</a>
+          <a href="../displayEvents/displayEvents.php">See Events</a>
+          <a href="../displayRSOs/displayRSOs.php">See RSO</a>
+          <a href="../displayUniversity/displayUniversity.php">See University</a>
+  </div>
   <form action = "createRSO.php" method = "post" onsubmit="return CheckBoxCount();">
     <?php include('errors.php'); ?> 
     <table class="content-table">
@@ -57,6 +64,9 @@ for($i = 0; $i< $total; $i++)
       </table>
       <input type="hidden" id = "arsize" name="arsize" value = "<?php echo $arsize; ?>">
   <form>
+  
+  <div id="Bar" class="bar">
+  </div>
 
   <script>
     
