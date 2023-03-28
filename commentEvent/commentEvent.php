@@ -53,7 +53,7 @@
             var userName = <?php echo json_encode($userID); ?>;
             
             var eventHeader = document.getElementById("eventName");
-            eventHeader.innerHTML = "Leave Your Comment On" + eventName + "!";
+            eventHeader.innerHTML = "Leave Your Comment On " + eventName + "!";
 
             var eventValue = document.getElementById("eventValue");
             eventValue.value = eventName;

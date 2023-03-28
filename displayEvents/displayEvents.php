@@ -129,6 +129,7 @@ for($i = 0; $i< $total; $i++){
             <th>Type</th>
             <th>Contact Email</th>
             <th>Contact Phone Number</th>
+            <th>Tweet!</th>
           </tr>
         </thead>
         <tbody class="tbody">
@@ -202,6 +203,7 @@ for($i = 0; $i< $total; $i++){
           var cell9 = row.insertCell(8);
           var cell10 = row.insertCell(9);
           var cell11 = row.insertCell(10);
+          var cell12 = row.insertCell(11);
   
 
           cell1.innerHTML = hostArray[i];
@@ -215,6 +217,9 @@ for($i = 0; $i< $total; $i++){
           cell9.innerHTML = typeArray[i];
           cell10.innerHTML = emailArray[i];
           cell11.innerHTML = phoneNumArray[i];
+
+          var eventName = nameArray[i];
+          cell12.insertAdjacentHTML('beforeend', '<a class="twitter-share-button"href="https://twitter.com/intent/tweet?text=Check%20This%20Event%20Out!%20localhost/cop4710/commentEvent/commentEvent.php?eventName=' + eventName  + '">Tweet</a>');
 
           if(k%2==0){
 
@@ -373,6 +378,24 @@ for($i = 0; $i< $total; $i++){
       window.location.href = "../commentEvent/commentEvent.php?eventName=" + javascriptVariable;
 
     }
+
+
+    window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
 
   </script>
 

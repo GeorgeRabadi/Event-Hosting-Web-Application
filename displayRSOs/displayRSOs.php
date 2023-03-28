@@ -32,7 +32,12 @@
               <div class="button">
                 <input type="submit" value="Join" name="join_rso"> 
               </div>
-             </td>
+            </td>
+            <td>  
+              <div class="button">
+                <input type="submit" value="Leave" name="leave_rso"> 
+              </div>
+            </td>
         </tr>
         </tbody>
       </table>
@@ -109,7 +114,7 @@
 
 
       if (i == rsoList.length){
-          alert("Please Choose at Least 1 RSO to Join!"); 
+          alert("Please Choose at Least 1 RSO to Join or Leave!"); 
           return false;}
 
 
@@ -121,7 +126,7 @@
             
             if(rsoList[i].value != userUniversity)
             {
-                alert("You Can Only Join RSOs Belonging to Your University!"); 
+                alert("Please Choose Only RSOs that Belong to Your University!"); 
                 return false;
             }
               

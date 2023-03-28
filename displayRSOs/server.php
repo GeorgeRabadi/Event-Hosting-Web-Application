@@ -121,4 +121,50 @@ if (isset($_POST['join_rso']))
   
 
 }
+else if (isset($_POST['leave_rso'])) 
+{
+
+  for($i = 0; $i<$total; $i++)
+  {
+   
+
+    if(isset($_POST[strval($i)]))
+    {
+
+      $query =  "SELECT count(*) FROM rso where rsoName = '$rsoArray[$i]' AND adminID = '$userID'";
+      $result = mysqli_query($db, $query);
+      $count = mysqli_fetch_array($result)[0];
+
+      if($count != 0)
+      {
+        echo "<script>alert('Admin cannot leave RSO!'";
+        continue;
+      }
+
+      $query =  "SELECT count(*) FROM rsomembership where rsoName = '$rsoArray[$i]' AND userID = '$userID'";
+      $result = mysqli_query($db, $query);
+      $count = mysqli_fetch_array($result)[0];
+
+      if($count == 0)
+      {
+        echo "<script>alert('You are not a member of $rsoArray[$i]!');</script>";
+        continue;
+      }
+
+
+      $query = "DELETE FROM rsomembership where rsoName = '$rsoArray[$i]' AND userID = '$userID'";
+      mysqli_query($db, $query);
+
+      echo "<script>alert('You have left $rsoArray[$i]!');</script>";
+
+    
+    }
+
+  }
+
+  header("Refresh:0");
+
+  
+
+}
 ?>
