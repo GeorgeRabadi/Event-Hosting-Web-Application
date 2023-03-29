@@ -37,6 +37,8 @@ body {
     background: linear-gradient(to bottom right, #ffff00 0%, #ff9900 100%);
     background-clip: border-box;
     border-radius: 6px;
+    margin-left: 37%;
+    max-width: 500;
     -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
 
 }
@@ -97,7 +99,7 @@ body {
     position: relative;
     width: 19px;
     font-size: 25px;
-    color: black;
+    color: #ff5e00;
 }
 
 .rating {
@@ -116,7 +118,7 @@ body {
     position: relative;
     width: 19px;
     font-size: 25px;
-    color: black;
+    color: #ff5e00;
     cursor: pointer;
 }
 
@@ -140,3 +142,49 @@ body {
 .rating:hover>input:checked~label:before {
     opacity: 0.4
 }
+
+.navbar{
+    background: linear-gradient(to bottom right, #ffff00 0%, #ff9900 100%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: block;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: auto;
+    margin-right: auto;
+    height: 100%; /* 100% Full-height */
+    max-width: 175px;
+    width: 100%;
+  }
+  
+  .navbar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    -webkit-text-stroke: 1px grey; /* width and color */
+  
+    font-family: sans; color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .bar { 
+    background: linear-gradient(to bottom right, #ffff00 0%, #ff9900 100%);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: auto;
+    margin-right: auto;
+    height: 100%; /* 100% Full-height */
+    max-width: 175px;
+    width: 100%; 
+    }  
+  

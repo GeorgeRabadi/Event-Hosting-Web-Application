@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
     <div class= "container">
         <div class="title"><img src = "../imgs/ucf.png"></div>
             <form action = "createUniversity.php" method = "post">
