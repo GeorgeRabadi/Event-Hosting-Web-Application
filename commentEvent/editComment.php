@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<div class="navbar">
+          <a class="active" href="../homepage/homepage.php">Home</a>
+          <a href="../createEvent/createEvent.php">Create Event</a>
+          <a href="../createRSO/createRSO.php">Create RSO</a>
+          <a href="../displayEvents/displayEvents.php">See Events</a>
+          <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
+          <a href="../displayUniversity/displayUniversity.php">See University</a>
+          <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
+          <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
+  </div>
+
 <body>
 <form action = "commentEvent.php?eventName=<?php echo $eventName?>"   method = "POST">
 <input type = "hidden"  id = "eventValue" name="eventName"  required>

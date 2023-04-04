@@ -107,14 +107,17 @@ for($i = 0; $i< $total; $i++){
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
-    <div id="Navbar" class="navbar">
-        <a class="active" href="../homepage/homepage.php">Home</a>
-        <a href="../createEvent/createEvent.php">Create Event</a>
-        <a href="../createRSO/createRSO.php">Create RSO</a>
-        <a href="../displayEvents/displayEvents.php">See Events</a>
-        <a href="../displayRSOs/displayRSOs.php">See RSO</a>
-        <a href="../displayUniversity/displayUniversity.php">See University</a>
-    </div>
+  <div class="navbar">
+          <a class="active" href="../homepage/homepage.php">Home</a>
+          <a href="../createEvent/createEvent.php">Create Event</a>
+          <a href="../createRSO/createRSO.php">Create RSO</a>
+          <a href="../displayEvents/displayEvents.php">See Events</a>
+          <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
+          <a href="../displayUniversity/displayUniversity.php">See University</a>
+          <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
+          <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
+  </div>
+
     <table class="content-table">
         <thead>
           <tr>
