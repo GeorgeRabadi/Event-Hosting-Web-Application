@@ -116,6 +116,7 @@ for($i = 0; $i< $total; $i++){
           <a href="../displayUniversity/displayUniversity.php">See University</a>
           <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
           <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
+          <a href="../createUniversity/createUniversity.php">Create University</a>
   </div>
 
     <table class="content-table">

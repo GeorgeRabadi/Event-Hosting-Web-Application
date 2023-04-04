@@ -15,6 +15,7 @@
           <a href="../displayUniversity/displayUniversity.php">See University</a>
           <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
           <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
+          <a href="../createUniversity/createUniversity.php">Create University</a>
   </div>
 <body onload="generateTable()">
   <form action = "RSOJOINREQUESTS.php" method = "post" onsubmit="return CheckBoxCount();">
