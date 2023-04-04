@@ -3,17 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2023 at 06:08 PM
+-- Generation Time: Mar 28, 2023 at 08:38 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
-
-# delete the database if it already exists
-drop database if exists cop4710;
-
-# create a new database
-create database cop4710;
-
-use cop4710;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `cop4710`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `userID` varchar(20) NOT NULL,
+  `eventName` varchar(20) NOT NULL,
+  `text` varchar(8000) NOT NULL,
+  `rating` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `userID`, `eventName`, `text`, `rating`) VALUES
+(1, 'AUCF', 'EVENTUCFPRIVATE', 'Amazing Event! Loved the food and drinks! Can\'t wait for next year\'s event!', 5),
+(2, 'UUCF', 'EVENTUCFPRIVATE', 'The admin above me is lying lol', 5);
 
 -- --------------------------------------------------------
 
@@ -63,6 +77,7 @@ INSERT INTO `events` (`Host`, `rsoName`, `name`, `category`, `description`, `tim
 ('AUSF', 'RSOUSF', 'EVENTUSFRSO', 'Category2', 'Description2', '01:01', '0001-01-01', 'University of South Florida, East Fowler Avenue, Tampa, FL, USA', 'RSO', 'email2@mail.usf.edu', '0000000000'),
 ('SAVALENCIA', 'RSOVALENCIA', 'EVENTVALENCIAPRIVATE', 'Category1', 'Description1', '01:01', '0001-01-01', 'Valencia College, West Campus, South Kirkman Road, Orlando, FL, USA', 'Private', 'email1@mail.valenciacollege.edu', '0000000000'),
 ('SAVALENCIA', 'RSOVALENCIA', 'EVENTVALENCIARSO', 'Category2', 'Description2', '01:01', '0001-01-01', 'Valencia College, West Campus, South Kirkman Road, Orlando, FL, USA', 'RSO', 'email2@mail.valenciacollege.edu', '0000000000'),
+('AUFL', 'RSOUFL1', 'RSOEVENTPRIVATE1', 'Category1', 'Description2', '01:01', '0001-01-01', 'University of Florida, Gainesville, FL, USA', 'RSO', 'email2@ufl.edu', '0000000000'),
 ('AUCF', '', 'UCFPUBLICEVENT', 'Category1', 'Description3', '01:01', '0001-01-01', 'UCF, Central Florida Blvd, Orlando, FL, USA', 'Public', 'email@knights.ucf.edu', '0000000000'),
 ('AUCF', '', 'UCFPUBLICEVENT1', 'Category2', 'Description2', '01:01', '0001-01-01', 'UCF, Central Florida Blvd, Orlando, FL, USA', 'Public', 'email2@knights.ucf.edu', '0000000000'),
 ('SAUFL', 'RSOUFL', 'UFLEVENTPRIVATE', 'Category2', 'Description1', '01:01', '0001-01-01', 'University of Florida, Gainesville, FL, USA', 'Private', 'email1@ufl.edu', '0000000000'),
@@ -153,12 +168,14 @@ CREATE TABLE `rso` (
 
 INSERT INTO `rso` (`rsoName`, `adminID`) VALUES
 ('RSOUCF', 'AUCF'),
+('RSOUCF2', 'AUCF'),
 ('RSOUFL', 'AUFL'),
 ('RSOUFL1', 'AUFL'),
 ('RSOUFL2', 'AUFL'),
 ('RSOUSF', 'AUSF'),
 ('RSOMIAMI', 'SAUMIAMI'),
 ('RSOUSF1', 'SAUSF'),
+('RSOUFL3', 'UUFL'),
 ('RSOUSF2', 'UUSF1'),
 ('RSOVALENCIA', 'UVALENCIA1'),
 ('RSOVALENCIA1', 'UVALENCIA1');
@@ -173,6 +190,13 @@ CREATE TABLE `rsojoinrequests` (
   `rsoName` varchar(50) NOT NULL,
   `userID` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rsojoinrequests`
+--
+
+INSERT INTO `rsojoinrequests` (`rsoName`, `userID`) VALUES
+('RSOUCF2', 'SAUCF');
 
 -- --------------------------------------------------------
 
@@ -200,6 +224,9 @@ INSERT INTO `rsomembership` (`rsoName`, `userID`) VALUES
 ('RSOUCF', 'UUCF'),
 ('RSOUCF', 'UUCF1'),
 ('RSOUCF', 'UUCF2'),
+('RSOUCF2', 'AUCF'),
+('RSOUCF2', 'UUCF'),
+('RSOUCF2', 'UUCF1'),
 ('RSOUFL', 'AUFL'),
 ('RSOUFL', 'SAUFL'),
 ('RSOUFL', 'UUFL'),
@@ -208,6 +235,7 @@ INSERT INTO `rsomembership` (`rsoName`, `userID`) VALUES
 ('RSOUFL', 'UUFL3'),
 ('RSOUFL', 'UUFL4'),
 ('RSOUFL1', 'AUFL'),
+('RSOUFL1', 'SAUFL'),
 ('RSOUFL1', 'UUFL'),
 ('RSOUFL1', 'UUFL1'),
 ('RSOUFL1', 'UUFL2'),
@@ -217,6 +245,10 @@ INSERT INTO `rsomembership` (`rsoName`, `userID`) VALUES
 ('RSOUFL2', 'UUFL1'),
 ('RSOUFL2', 'UUFL2'),
 ('RSOUFL2', 'UUFL3'),
+('RSOUFL3', 'AUFL'),
+('RSOUFL3', 'SAUFL'),
+('RSOUFL3', 'UUFL'),
+('RSOUFL3', 'UUFL1'),
 ('RSOUSF', 'AUSF'),
 ('RSOUSF', 'SAUSF'),
 ('RSOUSF', 'UUSF'),
@@ -252,7 +284,7 @@ INSERT INTO `rsomembership` (`rsoName`, `userID`) VALUES
 CREATE TABLE `university` (
   `universityName` varchar(50) NOT NULL,
   `locationName` varchar(100) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` varchar(8000) DEFAULT NULL,
   `numStudents` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -262,9 +294,9 @@ CREATE TABLE `university` (
 
 INSERT INTO `university` (`universityName`, `locationName`, `description`, `numStudents`) VALUES
 ('The University of Florida', 'University of Florida, Gainesville, FL, USA', 'One of America’s all-around best universities, the University of Florida drives future-making education, eye-opening discoveries, life-saving health care, and community-building collaboration for our state, our nation, and our world.', '52,367'),
-('The University of Miami', 'University of Miami, South Dixie Highway, Coral Gables, FL, USA', 'More than 19,000 students from around the world are pursuing their academic goals at the University of Miami, a vibrant and diverse community focused on teaching and learning, the discovery of new knowledge, and service to the South Florida region and bey', '19,000'),
+('The University of Miami', 'University of Miami, South Dixie Highway, Coral Gables, FL, USA', 'As one of the top research universities in the country, the University of Miami brings together esteemed faculty and talented students from throughout the United States and the world. Challenging courses, projects that forge together knowledge and practice, and a stimulating, diverse environment – find it all at the U.', '19,000'),
 ('University of Central Florida', 'University of Central Florida, Central Florida Blvd, Orlando, FL', 'UCF is unleashing the potential of students & faculty. UCF is one of America\'s best colleges for academics, research, impact & value.', '66,183'),
-('University of South Florida', 'University of South Florida, East Fowler Avenue, Tampa, FL, USA', 'Home to more than 2,200 students and 130 faculty members, the University of South Florida College of Education values high-quality education and excellence in research, teaching and learning. Our college is nationally accredited by the Council for the Acc', '37,000'),
+('University of South Florida', 'University of South Florida, East Fowler Avenue, Tampa, FL, USA', 'Home to more than 2,200 students and 130 faculty members, the University of South Florida College of Education values high-quality education and excellence in research, teaching and learning. Our college is nationally accredited by the Council for the Accreditation of Educator Preparation (CAEP) and our educator preparation programs are fully approved by the Florida Department of Education.', '37,000'),
 ('Valencia College', 'Valencia College, West Campus, South Kirkman Road, Orlando, FL, USA', 'At Valencia College, you\'ll get a quality education at a price you can afford. We offer the same education as a state university, only at about half the cost. And, with smaller campuses and classes, you\'ll get more support along the way.', '42,631');
 
 -- --------------------------------------------------------
@@ -290,6 +322,7 @@ INSERT INTO `users` (`userID`, `universityName`, `password`, `UserStatus`) VALUE
 ('AUMIAMI', 'The University of Miami', '3b807c96f2ebc0126adc99e96fdfe7b8', 'A'),
 ('AUSF', 'University of South Florida', 'ec651c1b3fa81c7bb77d8edcb01ba8da', 'A'),
 ('AVALENCIA', 'Valencia College', '1c112ff4a2d96d4ea02e5455c0e6aee9', 'A'),
+('GeorgeRabadi', 'University of Central Florida', 'cced671a552230ec280134094fbaa4d8', 'U'),
 ('SAUCF', 'University of Central Florida', 'e704c5fd0e3ef94b8e65a1bb2b567f29', 'S'),
 ('SAUFL', 'The University of Florida', 'd4b1585eb140b0f718615f8e8d7301fd', 'S'),
 ('SAUMIAMI', 'The University of Miami', '24c96e1c5355803b6d819b29aeb620ba', 'S'),
@@ -300,7 +333,7 @@ INSERT INTO `users` (`userID`, `universityName`, `password`, `UserStatus`) VALUE
 ('UUCF2', 'University of Central Florida', '96ca7a20b17e67a5614ae0f7dc5f5837', 'U'),
 ('UUCF3', 'University of Central Florida', '96ca7a20b17e67a5614ae0f7dc5f5837', 'U'),
 ('UUCF4', 'University of Central Florida', '96ca7a20b17e67a5614ae0f7dc5f5837', 'U'),
-('UUFL', 'The University of Florida', 'a511c3f1dbfe05b37b6c41098ede7590', 'U'),
+('UUFL', 'The University of Florida', 'a511c3f1dbfe05b37b6c41098ede7590', 'A'),
 ('UUFL1', 'The University of Florida', 'a511c3f1dbfe05b37b6c41098ede7590', 'U'),
 ('UUFL2', 'The University of Florida', 'a511c3f1dbfe05b37b6c41098ede7590', 'U'),
 ('UUFL3', 'The University of Florida', '75cf5b29db244c5d63b12988da21a979', 'U'),
@@ -326,15 +359,21 @@ INSERT INTO `users` (`userID`, `universityName`, `password`, `UserStatus`) VALUE
 --
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userID` (`userID`),
+  ADD KEY `eventName` (`eventName`);
+
+--
 -- Indexes for table `events`
 --
-set foreign_key_checks = 0;
 ALTER TABLE `events`
   ADD PRIMARY KEY (`name`),
   ADD KEY `locationName` (`locationName`),
   ADD KEY `rsoName` (`rsoName`),
   ADD KEY `Host` (`Host`);
-set foreign_key_checks = 1;
 
 --
 -- Indexes for table `location`
@@ -404,10 +443,18 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`eventName`) REFERENCES `events` (`name`);
+
+--
 -- Constraints for table `events`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`locationName`) REFERENCES `location` (`locationName`),
+  ADD CONSTRAINT `events_ibfk_2` FOREIGN KEY (`rsoName`) REFERENCES `rso` (`rsoName`),
   ADD CONSTRAINT `events_ibfk_3` FOREIGN KEY (`Host`) REFERENCES `users` (`userID`);
 
 --
