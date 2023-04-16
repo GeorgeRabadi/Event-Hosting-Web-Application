@@ -462,7 +462,6 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`locationName`) REFERENCES `location` (`locationName`),
-  ADD CONSTRAINT `events_ibfk_2` FOREIGN KEY (`rsoName`) REFERENCES `rso` (`rsoName`),
   ADD CONSTRAINT `events_ibfk_3` FOREIGN KEY (`Host`) REFERENCES `users` (`userID`);
 
 --
