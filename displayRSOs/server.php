@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['userID'])){
-  header("Location: ../registration/login.php");
-  die;}
 
 $userID = $_SESSION['userID'];
 

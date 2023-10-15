@@ -1,0 +1,60 @@
+
+body
+{
+ 
+    background-image: url('imgs/UCFBackground.jpg');
+
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.navbar{
+    background-color: #F1C400 !important;
+}
+
+
+.nav-link{
+    font-weight: bold;
+    color: #F1C400;
+}
+
+.container {
+    
+    background-color: #F1C400 !important;
+    border-color: black !important;
+    border-radius: 20px !important;
+}
+
+.container-fluid{
+    background-color: transparent !important;
+    border-color: #F1C400 !important;
+}
+
+
+.custom_btn {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.label{
+    font-weight: bold;
+    margin: 10px;
+    background-color: #F1C400 !important;
+}
+
+.input-field {
+    border-color: black;
+    height: 50px;
+    margin: 10px;
+}
+
+label {
+    background-color: white;
+    padding: 0.5rem;
+    border-color: #F1C400 !important;
+    cursor: pointer;
+}

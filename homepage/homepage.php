@@ -2,30 +2,27 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../mystyle.css">
 </head>
 <body>
-    <div class="navbar">
-            <a class="active" href="../homepage/homepage.php">Home</a>
-            <a href="../createEvent/createEvent.php">Create Event</a>
-            <a href="../createRSO/createRSO.php">Create RSO</a>
-            <a href="../displayEvents/displayEvents.php">See Events</a>
-            <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
-            <a href="../displayUniversity/displayUniversity.php">See University</a>
-            <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
-            <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
-            <a href="../createUniversity/createUniversity.php">Create University</a>
-    </div>
 
-    <div class= "container">
-        <div class="title"><img src = "../imgs/ucf.png"></div>
-        <img id="statue_img" src = "../imgs/statue.png">
-        <div class="home">
-            <span style="font-family:fangsong">Welcome</span>
+
+
+<?php include('../nav.php'); ?> 
+
+<div class="d-flex align-items-center min-vh-100" style="margin-bottom:50px;">
+    <div class="container-fluid" style="width: 50%;">
+        <div class="row justify-content-center gy-2">
+
+            <img class="col-5"  src = "../imgs/ucf.png" alt = "Statue"/>
+
+            <div class="w-100"></div>
+            <h1 class="col-12 text-center" style="font-weight: bold; color: #F1C400;">Welcome, <?=  $_SESSION['userID'] ?>!</h1>
+
         </div>
     </div>
-
-</body>
+</div>
 
 <div id="Bar" class="bar">
 </div>
