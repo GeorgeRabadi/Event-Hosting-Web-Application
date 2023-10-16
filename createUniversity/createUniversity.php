@@ -1,55 +1,52 @@
-<?php include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Create University</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<div class="navbar">
-        <a class="active" href="../homepage/homepage.php">Home</a>
-        <a href="../createEvent/createEvent.php">Create Event</a>
-        <a href="../createRSO/createRSO.php">Create RSO</a>
-        <a href="../displayEvents/displayEvents.php">See Events</a>
-        <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
-        <a href="../displayUniversity/displayUniversity.php">See University</a>
-        <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
-        <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
-        <a href="../createUniversity/createUniversity.php">Create University</a>
-</div>
+
 <body>
-    <div class= "container">
-        <div class="title"><img src = "../imgs/ucf.png"></div>
-            <form action = "createUniversity.php" method = "post">
-                <?php include('errors.php'); ?>
-                <div class = "user-details">
-                    <div class="input-box">
-                        <span class = "details">University Name</span>
-                        <input type="text" name="name" placeholder="Enter University Name" required value = "<?php echo $name; ?>">
-                    </div>
-                    <div class="input-box">
-                        <span class = "details">Description</span>
-                        <input type = "text" name="description" placeholder="Enter a Short Description" required value = "<?php echo $description; ?>">
-                    </div>
-                    <div class="input-box">
-                        <span class = "details">Location</span>
-                        <input type = "text" id = "searchInput" name="locationName" placeholder="Enter University Location" required value = "<?php echo $locationName; ?>">
+<?php include('../nav.php'); include('server.php');?>    
+    <form action = "createUniversity.php" method = "post">
+        <div class="d-flex align-items-center min-vh-100" style="margin-bottom:50px;">
+            <div class="container gy-5 border bg-warning rounded" style="width: 50%;">
+                <div class="row justify-content-center">
+                    <?php include('errors.php'); ?>
+
+                        <div class = "col-12 text-center m-5" ><img src = "../imgs/logo.png" width="300" height = "200"></div>
+                        <div class="w-100"></div>
+
+                        <label for="name" class="col-lg-1 col-2 label text-center">University Name</label>
+                        <input class="col-4 text-center input-field" id="name" type="text" name="name" placeholder="Enter University Name" required value = "<?php echo $name; ?>">
+                        <div class="w-100"></div>
+
+
+                        <label for="description" class="col-lg-1 col-2 label text-center">Description</label>
+                        <input class="col-4 text-center input-field" id="description" type = "text" name="description" placeholder="Enter a Short Description" required value = "<?php echo $description; ?>">
+                        <div class="w-100"></div>
+   
+                        <label for="searchInput" class="col-lg-1 col-2 label text-center">Location</label>
+                        <input class="col-4 text-center input-field" type = "text" id = "searchInput" name="locationName" placeholder="Enter University Location" required value = "<?php echo $locationName; ?>">
                         <input type = "hidden" id = "lat" name="lat"  required value = "<?php echo $lat; ?>">
                         <input type = "hidden" id = "long" name="long" required value = "<?php echo $long; ?>">
-                    </div>
-                    <div class="input-box">
-                        <span id = "map" class="details" style="height: 15%; width: 439px; position: absolute"></span>
-                    </div>
-                    <div class="input-box" style = "margin-top: 200px;">
-                        <span class = "details">Number of Students</span>
-                        <input type = "text" name="numStudents" placeholder="Enter the Number of Students" required value = "<?php echo $numStudents; ?>">
-                    </div>
-                </div>
-            <div class="button">
-                <input type="submit" value="Create Unviersity Profile" name="create_profile"> 
-            </div>
-           </form>
-    </div>
+                        <div class="w-100"></div>
 
+                        <div id = "map" class="col-12 text-center"></div>
+                        <div class="w-100"></div>
+
+                        <label for="numStudents" class="col-lg-1 col-2 label text-center">Student Population</label>
+                        <input class="col-4 text-center input-field" id="numStudents" type = "text" name="numStudents" placeholder="Enter the Number of Students" required value = "<?php echo $numStudents; ?>">
+                        <div class="w-100"></div>
+
+                        <button class="btn btn-outline-dark custom_btn" type="submit" >Create University</button>
+                        <div class="w-100"></div>
+
+                        <input type="hidden" value="Create Unviersity Profile" name="create_profile"> 
+
+            </div>
+        </div>
+    </div>
+</form>
 
 <script>
 function initMap() {
@@ -113,7 +110,7 @@ function initMap() {
     });
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCd-5GPLp_7TggfgoU5LcfxNBQTM4ykw24&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBTUgx98HjjcpDfSKOOM90j6zNlEFWYToE&callback=initMap"></script>
 
 
 </body>

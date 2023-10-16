@@ -8,13 +8,12 @@
 </head>
 <body>
 
-<form action = "../index.php" method = "post">
+<form action = "server.php" method = "post">
     <div class="d-flex align-items-center min-vh-100" style="margin-bottom:50px;">
         <div class="container gy-5 border bg-warning rounded" style="width: 50%;">
             <div class="row justify-content-center">
 
                 <div class = "col-12 text-center" ><img src = "../imgs/ucf.png"></div>
-                <div class="w-100"></div>
 
                 <label for="userID" class="col-lg-1 col-2 label text-center">User ID</label>
                 <input class="col-4 text-center input-field " type="text" name="userID" id="userID" placeholder="Create your user ID" required value = "<?php echo $userid; ?>">
@@ -29,7 +28,7 @@
                 <input  class="col-4 text-center input-field " id="password2" type = "password" name="password_2" placeholder="Confirm Password" required>
                 <div class="w-100"></div>
 
-                <label for="email" class="col-lg-1 col-2 label text-center">University Email Domain</label>
+                <label for="email" class="col-lg-1 col-2 label text-center">Domain</label>
                 <input class="col-4 text-center input-field " id="email" type="text" name="universityName" placeholder='Ex: "Knights.ucf.edu"' required value = "<?php echo $universityName; ?>">
                 <div class="w-100"></div>
                 

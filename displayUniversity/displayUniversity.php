@@ -10,24 +10,24 @@
 
 <?php  include('../nav.php');  include('server.php');?>
 
-<form action = "displayRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
-    <div class="d-flex align-items-center min-vh-100 " style="margin-bottom:50px;">
-      <div class="container-fluid" style="width: 50%;">
-          <table class="table table-bordered table-dark table-secondary table-hover">
-            <thead>
-              <tr>
-                <th>University Name</th>
-                <th>Location</th>
-                <th>Description</th>
-                <th>Number of Students</th>
-              </tr>
-            </thead>
-            <tbody class="tbody">
-            </tbody>
-          </table>
-      </div>
-  </div>
-</form>
+
+  <div class="d-flex align-items-center min-vh-100 " style="margin-bottom:50px;">
+    <div class="container-fluid" style="width: 50%;">
+        <table class="table table-bordered table-dark table-secondary table-hover">
+          <thead>
+            <tr>
+              <th>University Name</th>
+              <th>Location</th>
+              <th>Description</th>
+              <th>Number of Students</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+          </tbody>
+        </table>
+    </div>
+</div>
+
 
     <div id="Bar" class="bar">
     </div>

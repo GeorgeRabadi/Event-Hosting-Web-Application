@@ -1,21 +1,7 @@
 <?php
 
-session_start();
 
-if (!isset($_SESSION['userID'])){
-  header("Location: ../registration/login.php");
-  die;}
-
-
-
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
-
-if (mysqli_connect_errno()) 
-	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-
-$host = $_SESSION['userID'];
-
-$checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$host'  LIMIT 1";
+$checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$userID'  LIMIT 1";
 $result = mysqli_query($db, $checkAdminStatus);
 $adminStatus = mysqli_fetch_array($result);
 
@@ -72,7 +58,7 @@ if (isset($_POST['create_event'])) {
   }
 
 
-  $query = "SELECT * FROM rsomembership WHERE rsoName ='$rsoName' and userID = '$host' LIMIT 1";
+  $query = "SELECT * FROM rsomembership WHERE rsoName ='$rsoName' and userID = '$userID' LIMIT 1";
   $result = mysqli_query($db, $query);
   $rName = mysqli_fetch_assoc($result);
 
@@ -98,7 +84,7 @@ if (isset($_POST['create_event'])) {
   	if($type != "Public")
     {
       $query = "INSERT INTO events (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
-      VALUES('$host', '$rsoName', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
+      VALUES('$userID', '$rsoName', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
       mysqli_query($db, $query);
       echo "<script>alert('Event Created Successfully');</script>";
     }
@@ -109,7 +95,7 @@ if (isset($_POST['create_event'])) {
       mysqli_query($db, $query);
 
       $query = "INSERT INTO events (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
-      VALUES('$host', '', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
+      VALUES('$userID', '', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
       mysqli_query($db, $query);
       echo "<script>alert('Event Created Successfully');</script>";
 
@@ -120,7 +106,7 @@ if (isset($_POST['create_event'])) {
     else
     {
       $query = "INSERT INTO requestedevents (Host, rsoName, name, category, description, time, date, locationName, email, phoneNum, type)  
-      VALUES('$host', '', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
+      VALUES('$userID', '', '$name', '$category', '$description', '$time', '$date', '$locationName', '$email', '$phoneNum', '$type')";
       mysqli_query($db, $query);
 
       echo "<script>alert('Awaiting Super Admin Approval');</script>";

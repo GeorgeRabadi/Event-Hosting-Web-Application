@@ -15,10 +15,10 @@
     <div class="container-fluid" style="width: 50%;">
         <div class="row justify-content-center gy-2">
 
-            <img class="col-5"  src = "../imgs/ucf.png" alt = "Statue"/>
+            <img class="col-5"  src = "../imgs/logo.png" alt = "Statue"/>
 
             <div class="w-100"></div>
-            <h1 class="col-12 text-center" style="font-weight: bold; color: #F1C400;">Welcome, <?=  $userID ?>!</h1>
+            <h1 class="col-12 text-center display-1" style="font-weight: bold; color: #F1C400;">Welcome, <?=  $userID ?>!</h1>
 
         </div>
     </div>

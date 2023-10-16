@@ -24,10 +24,8 @@
         <tbody class="tbody">
         <tr>
           <td>  
-              <div class="input-box">
-                  <input type="text" name="name" placeholder="Enter RSO Name" required value = "<?php echo $name; ?>">
-              </div>
-             </td>
+                <input class="border border-dark " type="text" name="name" placeholder="Enter RSO Name" style="background-color: #F1C400;"required value = "<?php echo $name; ?>">
+          </td>
           </tr>
           <tr style ="background-color: transparent;">
             <td>  

@@ -1,16 +1,4 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['userID'])){
-  header("Location: ../registration/login.php");
-  die;}
-
-$userID = $_SESSION['userID'];
-
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
-
-if (mysqli_connect_errno()) 
-  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 
 
 $checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$userID'  LIMIT 1";

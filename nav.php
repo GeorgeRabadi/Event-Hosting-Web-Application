@@ -26,6 +26,7 @@ if (mysqli_connect_errno())
 
 <div class="pos-f-t">
   <nav class="navbar navbar-light">
+  <div class="title"><img src = "../imgs/ucf.png"></div>
     <button class="navbar-toggler border border-dark rounded" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -78,3 +79,4 @@ if (mysqli_connect_errno())
       </ul>
   </div>
 </div>
+

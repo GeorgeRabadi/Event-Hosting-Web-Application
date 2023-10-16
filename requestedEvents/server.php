@@ -1,23 +1,11 @@
 <?php
 
-session_start();
 
-if (!isset($_SESSION['userID'])){
-  header("Location: ../registration/login.php");
-  die;}
-
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
-
-if (mysqli_connect_errno()) 
-  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-  
-$username  = $_SESSION['userID'];
-
-$query =  "SELECT universityName FROM users WHERE userID = '$username'";
+$query =  "SELECT universityName FROM users WHERE userID = '$userID'";
 $result = mysqli_query($db, $query);
 $userUniversity = mysqli_fetch_array($result)[0];
 
-$checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$username'  LIMIT 1";
+$checkAdminStatus = "SELECT userStatus FROM users WHERE userID = '$userID'  LIMIT 1";
 $result = mysqli_query($db, $checkAdminStatus);
 $adminStatus = mysqli_fetch_array($result);
 
@@ -27,7 +15,7 @@ if($adminStatus[0] != 'S'){
 
   $username = $_SESSION['userID'];
   
-  $query =  "SELECT universityName FROM users WHERE userID = '$username'";
+  $query =  "SELECT universityName FROM users WHERE userID = '$userID'";
   $result = mysqli_query($db, $query);
   $userUniversity = mysqli_fetch_array($result)[0];
   
