@@ -1,11 +1,17 @@
 <?php 
 
-  session_start();
+session_start();
 
-  
-  if (!isset($_SESSION['userID'])){
-    header("Location: ../registration/login.php");
-    die;}
+if (!isset($_SESSION['userID'])){
+  header("Location: ../registration/login.php");
+  die;}
+
+$userID = $_SESSION['userID'];
+
+$db = mysqli_connect("localhost", 'root', '', 'cop4710');
+
+if (mysqli_connect_errno()) 
+  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 
 ?>
 
@@ -61,7 +67,7 @@
         <li class="nav-item active">
             <a class="nav-link"  href="../logout.php">
               <div class ="text-success">
-                Logged in as <?=  $_SESSION['userID'] ?>
+                Logged in as <?=  $userID ?>
               </div>
               <div>
                 <button class = "btn btn-danger text-dark">

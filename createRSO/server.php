@@ -1,15 +1,22 @@
 <?php
 
-session_start();
 
-if (!isset($_SESSION['userID'])){
-  header("Location: ../registration/login.php");
-  die;}
+$checkUniversity = "SELECT universityName FROM users WHERE userID = '$userID'  LIMIT 1";
+$result = mysqli_query($db, $checkUniversity);
+$universityName = mysqli_fetch_array($result)[0];
 
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
+$query =  "SELECT count(*) FROM users WHERE universityName ='$universityName'";
+$result = mysqli_query($db, $query);
+$count = mysqli_fetch_array($result);
 
-if (mysqli_connect_errno()) 
-	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+$total = $count[0];
+
+$query = "SELECT userID FROM users WHERE universityName ='$universityName'";
+$result = mysqli_query($db, $query);
+$studentArray = array();
+
+for($i = 0; $i< $total; $i++)
+  array_push($studentArray, mysqli_fetch_array($result)[0]);
 
 
 

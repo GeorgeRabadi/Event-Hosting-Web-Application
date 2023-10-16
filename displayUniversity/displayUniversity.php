@@ -1,45 +1,3 @@
-<?php 
-       
-session_start();
-
-if (!isset($_SESSION['userID'])){
-  header("Location: ../registration/login.php");
-  die;}
-
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
-
-if (mysqli_connect_errno()) 
-  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-
-         
-$query =  "SELECT count(*) FROM university";
-$result = mysqli_query($db, $query);
-$count = mysqli_fetch_array($result);
-
-$total = $count[0];
-
-$query1 = "SELECT universityName FROM university ORDER BY universityName";
-$query2 = "SELECT locationName FROM university ORDER BY universityName";
-$query3 = "SELECT description FROM university ORDER BY universityName";
-$query4 = "SELECT numStudents FROM university ORDER BY universityName";
-$result1 = mysqli_query($db, $query1);
-$result2 = mysqli_query($db, $query2);
-$result3 = mysqli_query($db, $query3);
-$result4 = mysqli_query($db, $query4);
-$universityArray = array();
-$locationArray = array();
-$descriptionArray = array();
-$numArray = array();
-
-for($i = 0; $i< $total; $i++){
-  array_push($universityArray, mysqli_fetch_array($result1)[0]);
-  array_push($locationArray, mysqli_fetch_array($result2)[0]);
-  array_push($descriptionArray, mysqli_fetch_array($result3)[0]);
-  array_push($numArray, mysqli_fetch_array($result4)[0]);
-}
-
-         
-?>
 
 <!DOCTYPE html>
 <html>
@@ -47,31 +5,29 @@ for($i = 0; $i< $total; $i++){
     <title>Display Universities</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-  <div class="navbar">
-          <a class="active" href="../homepage/homepage.php">Home</a>
-          <a href="../createEvent/createEvent.php">Create Event</a>
-          <a href="../createRSO/createRSO.php">Create RSO</a>
-          <a href="../displayEvents/displayEvents.php">See Events</a>
-          <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
-          <a href="../displayUniversity/displayUniversity.php">See University</a>
-          <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
-          <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
-          <a href="../createUniversity/createUniversity.php">Create University</a>
-  </div>
 
 <body onload="generateTable()">
-    <table class="content-table">
-        <thead>
-          <tr>
-            <th>University Name</th>
-            <th>Location</th>
-            <th>Description</th>
-            <th>Number of Students</th>
-          </tr>
-        </thead>
-        <tbody class="tbody">
-        </tbody>
-      </table>
+
+<?php  include('../nav.php');  include('server.php');?>
+
+<form action = "displayRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
+    <div class="d-flex align-items-center min-vh-100 " style="margin-bottom:50px;">
+      <div class="container-fluid" style="width: 50%;">
+          <table class="table table-bordered table-dark table-secondary table-hover">
+            <thead>
+              <tr>
+                <th>University Name</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Number of Students</th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+            </tbody>
+          </table>
+      </div>
+  </div>
+</form>
 
     <div id="Bar" class="bar">
     </div>

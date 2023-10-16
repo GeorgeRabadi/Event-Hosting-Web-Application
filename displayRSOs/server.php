@@ -1,13 +1,4 @@
 <?php
-session_start();
-
-
-$userID = $_SESSION['userID'];
-
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
-
-if (mysqli_connect_errno()) 
-  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 
          
 

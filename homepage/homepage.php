@@ -18,7 +18,7 @@
             <img class="col-5"  src = "../imgs/ucf.png" alt = "Statue"/>
 
             <div class="w-100"></div>
-            <h1 class="col-12 text-center" style="font-weight: bold; color: #F1C400;">Welcome, <?=  $_SESSION['userID'] ?>!</h1>
+            <h1 class="col-12 text-center" style="font-weight: bold; color: #F1C400;">Welcome, <?=  $userID ?>!</h1>
 
         </div>
     </div>

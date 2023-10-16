@@ -1,24 +1,3 @@
-<?php include('server.php'); 
-       
-$user = $_SESSION['userID'];
-$checkUniversity = "SELECT universityName FROM users WHERE userID = '$user'  LIMIT 1";
-$result = mysqli_query($db, $checkUniversity);
-$universityName = mysqli_fetch_array($result)[0];
-
-$query =  "SELECT count(*) FROM users WHERE universityName ='$universityName'";
-$result = mysqli_query($db, $query);
-$count = mysqli_fetch_array($result);
-
-$total = $count[0];
-
-$query = "SELECT userID FROM users WHERE universityName ='$universityName'";
-$result = mysqli_query($db, $query);
-$studentArray = array();
-
-for($i = 0; $i< $total; $i++)
-  array_push($studentArray, mysqli_fetch_array($result)[0]);
-         
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,21 +6,14 @@ for($i = 0; $i< $total; $i++)
 </head>
 
 <body onload="generateTable()">
-  <div class="navbar">
-          <a class="active" href="../homepage/homepage.php">Home</a>
-          <a href="../createEvent/createEvent.php">Create Event</a>
-          <a href="../createRSO/createRSO.php">Create RSO</a>
-          <a href="../displayEvents/displayEvents.php">See Events</a>
-          <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
-          <a href="../displayUniversity/displayUniversity.php">See University</a>
-          <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
-          <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
-          <a href="../createUniversity/createUniversity.php">Create University</a>
-  </div>
 
-  <form action = "createRSO.php" method = "post" onsubmit="return CheckBoxCount();">
+<?php  include('../nav.php');  include('server.php');?>
+
+<form action = "createRSO.php" method = "post" onsubmit="return CheckBoxCount();">
     <?php include('errors.php'); ?> 
-    <table class="content-table">
+    <div class="d-flex align-items-center min-vh-100 " style="margin-bottom:50px;">
+      <div class="container-fluid" style="width: 50%;">
+          <table class="table table-bordered table-dark table-secondary table-hover">
         <thead>
           <tr>
             <th>Student ID</th>
@@ -59,15 +31,15 @@ for($i = 0; $i< $total; $i++)
           </tr>
           <tr style ="background-color: transparent;">
             <td>  
-              <div class="button">
-                <input type="submit" value="Submit" name="create_rso"> 
-              </div>
+                <input class="btn btn-success text-dark" type="submit" value="Submit" name="create_rso"> 
              </td>
           </tr>
         </tbody>
       </table>
       <input type="hidden" id = "arsize" name="arsize" value = "<?php echo $arsize; ?>">
-  <form>
+    </div>
+  </div>
+<form>
   
   <div id="Bar" class="bar">
   </div>

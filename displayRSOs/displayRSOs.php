@@ -1,5 +1,3 @@
-<?php include('server.php') ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,20 +5,14 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
-  <div class="navbar">
-          <a class="active" href="../homepage/homepage.php">Home</a>
-          <a href="../createEvent/createEvent.php">Create Event</a>
-          <a href="../createRSO/createRSO.php">Create RSO</a>
-          <a href="../displayEvents/displayEvents.php">See Events</a>
-          <a href="../displayRSOs/displayRSOs.php">See RSOs</a>
-          <a href="../displayUniversity/displayUniversity.php">See University</a>
-          <a href="../requestedRSOs/requestedRSOs.php">Pending RSOs</a>
-          <a href="../requestedEvents/requestedEvents.php">Pending Events</a>
-          <a href="../createUniversity/createUniversity.php">Create University</a>
-  </div>
 
-  <form action = "displayRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
-    <table class="content-table">
+<?php  include('../nav.php');  include('server.php');?>
+
+
+<form action = "displayRSOs.php" method = "post" onsubmit="return CheckBoxCount();">
+    <div class="d-flex align-items-center min-vh-100 " style="margin-bottom:50px;">
+      <div class="container-fluid" style="width: 50%;">
+      <table class="table table-bordered table-dark table-secondary table-hover">
         <thead>
           <tr>
             <th>RSO Name</th>
@@ -33,19 +25,16 @@
         <tbody class="tbody">
         <tr style ="background-color: transparent;">
             <td>  
-              <div class="button">
-                <input type="submit" value="Join" name="join_rso"> 
-              </div>
+            <input class="btn btn-success text-dark" type="submit" value="Join" name="join_rso">
             </td>
-            <td>  
-              <div class="button">
-                <input type="submit" value="Leave" name="leave_rso"> 
-              </div>
+            <td>
+            <input class="btn btn-danger text-dark" type="submit" value="Leave" name="leave_rso">
             </td>
         </tr>
-        </tbody>
       </table>
-  </form>
+    </div>
+  </div>
+</form>
 
   <div id="Bar" class="bar">
   </div>
