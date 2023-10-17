@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Display Events</title>
-    <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="generateTable()">
 
@@ -134,9 +133,9 @@
 
         }
 
-        
-        cell1.setAttribute("id","event-link");
+        cell1.style.cursor = 'pointer';
         cell1.setAttribute("name", nameArray[i]);
+
 
         cell1.onclick = function()
         {
@@ -146,7 +145,7 @@
 
         }
 
-        cell2.setAttribute("id","event-link");
+        cell2.style.cursor = 'pointer';
         cell2.setAttribute("name", nameArray[i]);
 
         cell2.onclick = function()
@@ -157,7 +156,7 @@
 
         }
 
-        cell3.setAttribute("id","event-link");
+        cell3.style.cursor = 'pointer';
         cell3.setAttribute("name", nameArray[i]);
 
         cell3.onclick = function()
@@ -168,8 +167,7 @@
 
         }
 
-
-        cell4.setAttribute("id","event-link");
+        cell4.style.cursor = 'pointer';
         cell4.setAttribute("name", nameArray[i]);
 
         cell4.onclick = function()
@@ -180,7 +178,7 @@
 
         }
 
-        cell5.setAttribute("id","event-link");
+        cell5.style.cursor = 'pointer';
         cell5.setAttribute("name", nameArray[i]);
 
         cell5.onclick = function()
@@ -192,7 +190,7 @@
         }
 
         
-        cell6.setAttribute("id","event-link");
+        cell6.style.cursor = 'pointer';
         cell6.setAttribute("name", nameArray[i]);
 
         cell6.onclick = function()
@@ -203,7 +201,7 @@
 
         }
 
-        cell7.setAttribute("id","event-link");
+        cell7.style.cursor = 'pointer';        
         cell7.setAttribute("name", nameArray[i]);
 
         cell7.onclick = function()
@@ -214,7 +212,7 @@
 
         }
 
-        cell8.setAttribute("id","event-link");
+        cell8.style.cursor = 'pointer';
         cell8.setAttribute("name", nameArray[i]);
 
         cell8.onclick = function()
@@ -225,7 +223,7 @@
 
         }
 
-        cell9.setAttribute("id","event-link");
+        cell9.style.cursor = 'pointer';
         cell9.setAttribute("name", nameArray[i]);
 
         cell9.onclick = function()
@@ -236,7 +234,7 @@
 
         }
 
-        cell10.setAttribute("id","event-link");
+        cell10.style.cursor = 'pointer';
         cell10.setAttribute("name", nameArray[i]);
 
         cell10.onclick = function()
@@ -247,7 +245,7 @@
 
         }
 
-        cell11.setAttribute("id","event-link");
+        cell11.style.cursor = 'pointer';
         cell11.setAttribute("name", nameArray[i]);
 
         cell11.onclick = function()

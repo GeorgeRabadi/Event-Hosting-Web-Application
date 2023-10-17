@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Create University</title>
-    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -13,7 +12,7 @@
                 <div class="row justify-content-center">
                     <?php include('errors.php'); ?>
 
-                        <div class = "col-12 text-center m-5" ><img src = "../imgs/logo.png" width="300" height = "200"></div>
+                        <div class = "col-12 text-center mt-5 mb-5" ><img src = "../imgs/logo.png" width="300" height = "200"></div>
                         <div class="w-100"></div>
 
                         <label for="name" class="col-lg-1 col-2 label text-center">University Name</label>

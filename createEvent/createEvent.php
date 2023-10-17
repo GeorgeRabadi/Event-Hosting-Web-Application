@@ -15,7 +15,7 @@
             <div class="row justify-content-center">
                 <?php include('errors.php'); ?>
 
-                    <div class = "col-12 text-center m-5" ><img src = "../imgs/logo.png" width="300" height = "200"></div>
+                    <div class = "col-12 text-center mt-5 mb-5" ><img src = "../imgs/logo.png" width="300" height = "200"></div>
                     <div class="w-100"></div>
 
                     <label for="name" class="col-lg-1 col-2 label text-center">Event Name</label>
@@ -63,19 +63,19 @@
 
                     <div class="col-lg-2 col-3 label text-center">Type</div>
 
-                    <div class="form-check form-check-inline col-1">
+                    <div class="form-check form-check-inline col-2">
                         <input class="form-check-input" type="radio" name="type" id="dot-1" required value = "Public">
-                        <label class="form-check-label" for="dot-1" style = "background-color: #F1C400;">Public</label>
+                        <label class="form-check-label" for="dot-1">Public</label>
                     </div>
 
-                    <div class="form-check form-check-inline col-1">
+                    <div class="form-check form-check-inline col-2">
                         <input class="form-check-input" type="radio" name="type" id="dot-2" required value = "Private">
-                        <label class="form-check-label" for="dot-2" style = "background-color: #F1C400;">Private</label>
+                        <label class="form-check-label" for="dot-2" >Private</label>
                     </div>
 
-                    <div class="form-check form-check-inline col-1">
+                    <div class="form-check form-check-inline col-2">
                         <input class="form-check-input" type="radio" name="type" id="dot-3" required value = "RSO">
-                        <label class="form-check-label" for="dot-3" style = "background-color: #F1C400;">RSO</label>
+                        <label class="form-check-label" for="dot-3">RSO</label>
                     </div>
                     <div class="w-100"></div>
 

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Create RSO</title>
-    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body onload="generateTable()">

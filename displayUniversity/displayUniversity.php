@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Display Universities</title>
-    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body onload="generateTable()">

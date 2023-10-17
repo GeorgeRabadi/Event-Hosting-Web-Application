@@ -6,7 +6,7 @@ $result = mysqli_query($db, $checkAdminStatus);
 $adminStatus = mysqli_fetch_array($result);
 
 if($adminStatus[0] != 'A' && $adminStatus[0] != 'S'){
-  header("Location: ../index.php");
+  header("Location: ../401.php");
   die;
 }
 

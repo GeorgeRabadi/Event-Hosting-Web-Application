@@ -1,18 +1,5 @@
 <?php
-session_start();
 
-if (!isset($_SESSION['userID']) || !isset($_GET['eventName'])){
-  header("Location: ../registration/login.php");
-  die;}
-
-
-
-$userID = $_SESSION['userID'];
-
-$db = mysqli_connect("localhost", 'root', '', 'cop4710');
-
-if (mysqli_connect_errno()) 
-  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 
 $eventName = mysqli_real_escape_string($db, $_GET['eventName']);
 
@@ -23,7 +10,7 @@ $count = mysqli_fetch_array($result);
 
 if($count[0] == 0)
 {
-header("Location: ../registration/login.php");
+header("Location: ../404.php");
 die;
 }
 

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>RSO Join Requests</title>
-    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body onload="generateTable()">

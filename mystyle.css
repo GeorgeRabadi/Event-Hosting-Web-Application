@@ -1,4 +1,3 @@
-
 body
 {
  
@@ -52,9 +51,4 @@ body
     margin: 10px;
 }
 
-label {
-    background-color: white;
-    padding: 0.5rem;
-    border-color: #F1C400 !important;
-    cursor: pointer;
-}
+

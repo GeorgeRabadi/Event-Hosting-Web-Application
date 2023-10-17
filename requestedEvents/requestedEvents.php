@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Requested Events</title>
-    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body onload="generateTable()">
