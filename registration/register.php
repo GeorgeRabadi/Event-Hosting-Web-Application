@@ -30,7 +30,7 @@
                 <div class="w-100"></div>
 
                 <label for="email" class="col-lg-1 col-2 label text-center">Domain</label>
-                <input class="col-4 text-center input-field " id="email" type="text" name="universityName" placeholder='Ex: "Knights.ucf.edu"' required value = "<?php echo $universityName; ?>">
+                <input class="col-4 text-center input-field " id="email" type="text" name="universityName" placeholder='Ex: "Knights.ucf.edu"' required value = "<?php echo $domainName; ?>">
                 <div class="w-100"></div>
                 
 

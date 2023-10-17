@@ -8,6 +8,7 @@ session_start();
 
 $userid = "";
 $universityName = "";
+$domainName = "";
 $password_2 = "";
 $password_1 = "";
 $errors = array(); 
@@ -21,6 +22,7 @@ if (mysqli_connect_errno())
 
 if (isset($_POST['reg_user'])) {
   $universityName = mysqli_real_escape_string($db, $_POST['universityName']);
+  $domainName = $universityName;
   $userid = mysqli_real_escape_string($db, $_POST['userID']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
