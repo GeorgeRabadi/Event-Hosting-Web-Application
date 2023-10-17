@@ -1,7 +1,7 @@
 <?php
 
 
-$eventName = mysqli_real_escape_string($db, $_GET['eventName']);
+$eventName = $_GET['eventName'];
 
 
 $query =  "SELECT count(*) FROM events where name = '$eventName' ";
@@ -15,7 +15,7 @@ die;
 }
 
 
-if(isset($_GET['oldText']) && isset($_GET['userID']))
+if(isset($_GET['oldText']) && isset($_SESSION['userID']))
   $oldText = mysqli_real_escape_string($db, $_GET['oldText']);
 
 
@@ -82,9 +82,11 @@ else if (isset($_POST['delete_comment']))
 }
 else if (isset($_POST['edit_comment']))
 {
-    $text = mysqli_real_escape_string($db, $_POST['textValue']);
+    $_SESSION['comment'] = $_POST['textValue'];
 
-    header("location: editComment.php?eventName=$eventName&oldText=$text&userID=$userID");
+    header("location: editComment.php?eventName=$eventName");
+
+    
     
 
 }

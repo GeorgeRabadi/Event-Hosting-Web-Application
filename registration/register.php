@@ -1,4 +1,5 @@
 <?php include('server.php') ?>
+<?php include('errors.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 </head>
 <body>
 
-<form action = "server.php" method = "post">
+<form action = "register.php" method = "post">
     <div class="d-flex align-items-center min-vh-100" style="margin-bottom:50px;">
         <div class="container gy-5 border bg-warning rounded" style="width: 50%;">
             <div class="row justify-content-center">

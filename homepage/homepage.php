@@ -22,6 +22,5 @@
     </div>
 </div>
 
-<div id="Bar" class="bar">
-</div>
+
 </html>

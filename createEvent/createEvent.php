@@ -90,9 +90,6 @@
     </div>
 </form>
 
-    <div id="Bar" class="bar">
-    </div>
-
 
 <script>
 function initMap() {

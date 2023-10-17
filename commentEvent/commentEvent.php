@@ -9,8 +9,10 @@
 
 <?php  include('../nav.php');  include('server.php');?>
 
-<form action = "commentEvent.php?eventName=<?php echo $eventName?>"  method = "POST">
-    <input type = "hidden"  id = "eventValue" name="eventName" value= "<?= $eventName ?>" required>
+
+
+<form action = "commentEvent.php?eventName=<?php echo $eventName?>"  method = "POST"  style="height: 100%">
+<input type = "hidden"  id = "eventValue" name="eventName" value= "<?= $eventName ?>" required>
     <div class="d-flex justify-content-center mb-5">
         <div class="container-sm mt-5 border border-dark bg-dark rounded w-25">
             <div class="row gy-2 mt-5 mb-5 ml-2">
