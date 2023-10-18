@@ -98,9 +98,9 @@ INSERT INTO `events` (`Host`, `rsoName`, `name`, `category`, `description`, `tim
 --
 
 CREATE TABLE `location` (
-  `locationName` varchar(100) NOT NULL,
-  `latitude` varchar(10) DEFAULT NULL,
-  `longitude` varchar(10) NOT NULL
+  `locationName` varchar(255) NOT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
