@@ -14,7 +14,7 @@
 
 <form action = "commentEvent.php?eventName=<?php echo $eventName?>" method = "POST">
     <input type = "hidden"  id = "eventValue" name="eventName"  required>
-    <input type = "hidden"  id = "oldText" name="oldText"  value = "<?php echo $_SESSION['comment']; ?>" required>
+    <input type = "hidden"  id = "oldText" name="oldText"  value = "<?php echo $oldText; ?>" required>
     <div class="d-flex justify-content-center mb-5">
         <div class="container-sm mt-5 border border-dark bg-dark rounded w-25">
             <div class="row gy-2 mt-5 mb-5 ml-2">
@@ -23,7 +23,7 @@
 
                 <div class="form-group col-10">
                     <label class="bg-dark text-light" for="comment">Edit your comment on <?= $eventName ?></label>
-                    <textarea type="text" class="form-control form-control-lg" id="comment" name="comment" aria-describedby="comment" placeholder="Edit your comment" required><?php echo $_SESSION['comment']; ?></textarea>
+                    <textarea type="text" class="form-control form-control-lg" id="comment" name="comment" aria-describedby="comment" placeholder="Edit your comment" required><?php echo $oldText; ?></textarea>
                 </div>
                 <div class="w-100"></div>
 

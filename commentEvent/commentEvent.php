@@ -99,7 +99,7 @@
             </div>
             `);
             else
-                document.body.insertAdjacentHTML('beforeend', `<form action = "commentEvent.php?eventName=<?php echo $eventName?>"   method = "POST">  
+                document.body.insertAdjacentHTML('beforeend', `<form action = "commentEvent.php?eventName=<?php echo $eventName?>" method = "POST">  
                     <div class="d-flex justify-content-center mb-5">
                         <div class="container-sm mt-5 border border-dark bg-dark rounded w-25">
                             <div class="row gy-2 mt-2 mb-2 ml-2">

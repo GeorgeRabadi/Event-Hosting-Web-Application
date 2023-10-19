@@ -10,13 +10,13 @@ $count = mysqli_fetch_array($result);
 
 if($count[0] == 0)
 {
-header("Location: ../404.php");
-die;
+  header("Location: ../404.php");
+  die;
 }
 
 
 if(isset($_GET['oldText']) && isset($_SESSION['userID']))
-  $oldText = mysqli_real_escape_string($db, $_GET['oldText']);
+  $oldText = $_GET['oldText'];
 
 
 
@@ -82,9 +82,9 @@ else if (isset($_POST['delete_comment']))
 }
 else if (isset($_POST['edit_comment']))
 {
-    $_SESSION['comment'] = $_POST['textValue'];
+    $oldText = urlencode($_POST['textValue']);
 
-    header("location: editComment.php?eventName=$eventName");
+    header("location: editComment.php?eventName=$eventName&&oldText=$oldText");
 
     
     
