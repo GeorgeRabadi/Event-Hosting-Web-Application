@@ -1,6 +1,6 @@
 <?php
 
-include("../adminCheck.php");
+include("../superAdminCheck.php");
 
 
 $query =  "SELECT universityName FROM users WHERE userID = '$userID'";

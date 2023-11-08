@@ -16,7 +16,7 @@
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `userID` varchar(20) NOT NULL,
-  `eventName` varchar(20) NOT NULL,
+  `eventName` varchar(255) NOT NULL,
   `text` varchar(8000) NOT NULL,
   `rating` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,7 +38,7 @@ INSERT INTO `comments` (`id`, `userID`, `eventName`, `text`, `rating`) VALUES
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `userID` varchar(20) NOT NULL,
-  `eventName` varchar(20) NOT NULL,
+  `eventName` varchar(255) NOT NULL,
   `text` varchar(8000) NOT NULL,
   `rating` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -302,7 +302,7 @@ CREATE TABLE `university` (
 
 INSERT INTO `university` (`universityName`, `locationName`, `description`, `numStudents`) VALUES
 ('The University of Florida', 'University of Florida, Gainesville, FL, USA', 'One of America’s all-around best universities, the University of Florida drives future-making education, eye-opening discoveries, life-saving health care, and community-building collaboration for our state, our nation, and our world.', '52,367'),
-('The University of Miami', 'University of Miami, South Dixie Highway, Coral Gables, FL, USA', 'As one of the top research universities in the country, the University of Miami brings together esteemed faculty and talented students from throughout the United States and the world. Challenging courses, projects that forge together knowledge and practice, and a stimulating, diverse environment – find it all at the U.', '19,000'),
+('The University of Miami', 'University of Miami, South Dixie Highway, Coral Gables, FL, USA', 'As one of the top research universities in the country, the University of Miami brings together esteemed faculty and talented students from throughout the United States and the world. Challenging courses, projects that forge together knowledge and practice, and a stimulating, diverse environment – find it all at the University of Miami.', '19,000'),
 ('University of Central Florida', 'University of Central Florida, Central Florida Blvd, Orlando, FL', 'UCF is unleashing the potential of students & faculty. UCF is one of America\'s best colleges for academics, research, impact & value.', '66,183'),
 ('University of South Florida', 'University of South Florida, East Fowler Avenue, Tampa, FL, USA', 'Home to more than 2,200 students and 130 faculty members, the University of South Florida College of Education values high-quality education and excellence in research, teaching and learning. Our college is nationally accredited by the Council for the Accreditation of Educator Preparation (CAEP) and our educator preparation programs are fully approved by the Florida Department of Education.', '37,000'),
 ('Valencia College', 'Valencia College, West Campus, South Kirkman Road, Orlando, FL, USA', 'At Valencia College, you\'ll get a quality education at a price you can afford. We offer the same education as a state university, only at about half the cost. And, with smaller campuses and classes, you\'ll get more support along the way.', '42,631');
